@@ -12,6 +12,8 @@ import Nimble
 @testable import CombineRedux
 
 class EpicTests: XCTestCase {
+    
+    //untyped default implementation tests
     func test_sendActionToInputPublisherWithTypeDifferentOfTypedEpic_dontProducesOutputAndTheTypedEpicMethodIsNotCalled() {
         let sut = EpicMock<TestAction, Int>(shouldReturn: .state1)
         let inputPublisher = PassthroughSubject<Action, Never>()
@@ -51,6 +53,25 @@ class EpicTests: XCTestCase {
         expect(waiter.results[0] as? TestAction).to(equal(.state2))
     }
     
+    func test_inputSentByUntypedEpic_producesInputToTheTypedEpicWithCorrectState() {
+        let sut = EpicMock<TestAction, Int>(shouldReturn: .state1)
+        let inputPublisher = PassthroughSubject<Action, Never>()
+        
+        var appState: (current: Int, old: Int) = (0, 0)
+        
+        let actionPublishers = sut.untypedActionsPublishersFor(actionPublisher: inputPublisher.eraseToAnyPublisher(),
+                                                        appStateGetter: { return appState.current },
+                                                        oldAppStateGetter: { return appState.old })
+        CombineWaiter.wait(publisher: actionPublishers.first!)
+        appState.current = 1
+        
+        inputPublisher.send(TestAction.state1)
+        
+        expect(sut.lastState).to(equal(1))
+        expect(sut.lastOldState).to(equal(0))
+    }
+    
+    //simple epic default implementation
     func test_sendActionToEpicMethod_producesActionToSimpleEpicMethod() {
         let sut = EpicMock<TestAction, Int>(shouldReturn: .state1)
         let inputPublisher = PassthroughSubject<TestAction, Never>()

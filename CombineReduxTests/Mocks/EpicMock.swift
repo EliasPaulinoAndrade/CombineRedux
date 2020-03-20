@@ -12,9 +12,11 @@ import Combine
 
 class EpicMock<ActionType: Action, StateType>: SimpleEpic {
     var actionsWasCalled = false
-    var shouldReturn: ActionType
+    var shouldReturn: ActionType?
+    var lastState: StateType?
+    var lastOldState: StateType?
     
-    init(shouldReturn: ActionType) {
+    init(shouldReturn: ActionType? = nil) {
         self.shouldReturn = shouldReturn
     }
     
@@ -26,7 +28,14 @@ class EpicMock<ActionType: Action, StateType>: SimpleEpic {
         
         return actionsPublisher.flatMap { [weak self] action -> AnyPublisher<ActionType, Never> in
             self?.actionsWasCalled = true
-            return Just<ActionType>(shouldReturn).eraseToAnyPublisher()
+            self?.lastState = appStateGetter()
+            self?.lastOldState = oldAppStateGetter()
+            
+            if let shouldReturn = shouldReturn {
+                 return Just<ActionType>(shouldReturn).eraseToAnyPublisher()
+            } else {
+                return Empty().eraseToAnyPublisher()
+            }            
         }.eraseToAnyPublisher()
     }
 }
