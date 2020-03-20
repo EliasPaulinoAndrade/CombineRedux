@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 /// A type erasurer to the Epics. Use it to make a reference for a Epic.
-struct AnyEpic<StateType>: UntypedActionEpic {
+public struct AnyEpic<StateType>: UntypedActionEpic {
     let recoveredActionFor: (AnyPublisher<Action, Never>,
                                     @escaping StateGetter<StateType>,
                                     @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>]
@@ -19,7 +19,7 @@ struct AnyEpic<StateType>: UntypedActionEpic {
         recoveredActionFor = epic.untypedActionsPublishersFor
     }
     
-    func untypedActionsPublishersFor(actionPublisher publisher: AnyPublisher<Action, Never>,
+    public func untypedActionsPublishersFor(actionPublisher publisher: AnyPublisher<Action, Never>,
                    appStateGetter: @escaping StateGetter<StateType>,
                    oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>] {
         return recoveredActionFor(publisher, appStateGetter, oldAppStateGetter)

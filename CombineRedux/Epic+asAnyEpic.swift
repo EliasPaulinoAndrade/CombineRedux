@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UntypedActionEpic {
+public extension UntypedActionEpic {
     
     /// returns a type erased from the epic. Use it when you need save multiple references of different types of Epics.
     var asAnyEpic: AnyEpic<StateType> {

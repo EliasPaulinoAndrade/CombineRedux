@@ -23,7 +23,6 @@ class AnyEpicTests: XCTestCase {
         
         CombineWaiter.wait(publisher: actionPublishers.first!)
         inputPublisher.send(TestAction.state1)
-        
         expect(epic.actionsWasCalled).to(equal(true))
     }
     

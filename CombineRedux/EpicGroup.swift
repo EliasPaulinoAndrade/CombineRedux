@@ -10,22 +10,27 @@ import Foundation
 import Combine
 
 /// A Epic that groups othet epics while continue acting as a normal epic.
-struct EpicGroup<StateType, SubStateType>: UntypedActionEpic {
-    private let subEpics: [AnyEpic<SubStateType>]
+public struct EpicGroup<SubEpicType: UntypedActionEpic, StateType, SubStateType>: UntypedActionEpic where SubEpicType.StateType == SubStateType {
+    private let subEpics: [SubEpicType]
     private let keyPath: KeyPath<StateType, SubStateType>
 
-    init(subEpics: [AnyEpic<SubStateType>], keyPath: KeyPath<StateType, SubStateType>) {
+    public init(subEpics: [SubEpicType], keyPath: KeyPath<StateType, SubStateType>) {
         self.subEpics = subEpics
         self.keyPath = keyPath
     }
     
-    init(epic: AnyEpic<SubStateType>, keyPath: KeyPath<StateType, SubStateType>) {
+    public init(subEpics: SubEpicType ..., keyPath: KeyPath<StateType, SubStateType>) {
+        self.subEpics = subEpics
+        self.keyPath = keyPath
+    }
+    
+    public init(epic: SubEpicType, keyPath: KeyPath<StateType, SubStateType>) {
         self.init(subEpics: [epic], keyPath: keyPath)
     }
     
-    func untypedActionsPublishersFor(actionPublisher publisher: AnyPublisher<Action, Never>,
-                           appStateGetter: @escaping () -> StateType,
-                           oldAppStateGetter: @escaping () -> StateType) -> [AnyPublisher<Action, Never>] {
+    public func untypedActionsPublishersFor(actionPublisher publisher: AnyPublisher<Action, Never>,
+                                     appStateGetter: @escaping () -> StateType,
+                                     oldAppStateGetter: @escaping () -> StateType) -> [AnyPublisher<Action, Never>] {
         return subEpics.flatMap { subMiddleware -> [AnyPublisher<Action, Never>] in
             return subMiddleware.untypedActionsPublishersFor(
                 actionPublisher: publisher,

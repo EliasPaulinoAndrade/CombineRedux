@@ -16,6 +16,17 @@
 		641CEFB52424EEEE00C086BA /* AnyEpicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFB42424EEEE00C086BA /* AnyEpicTests.swift */; };
 		641CEFB72424F62E00C086BA /* Epic+asAnyEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */; };
 		641CEFB92424F8EC00C086BA /* EpicGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFB82424F8EC00C086BA /* EpicGroup.swift */; };
+		641CEFBB2424F9B500C086BA /* EpicGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */; };
+		641CEFBD2424FB6900C086BA /* Array+epics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFBC2424FB6900C086BA /* Array+epics.swift */; };
+		641CEFF92425086600C086BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFF82425086600C086BA /* AppDelegate.swift */; };
+		641CF00B2425096400C086BA /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF00A2425096400C086BA /* Reducers.swift */; };
+		641CF00D242509A700C086BA /* CombineRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; };
+		641CF00E242509A700C086BA /* CombineRedux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		641CF013242509FC00C086BA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF012242509FC00C086BA /* AppState.swift */; };
+		641CF01524250A1000C086BA /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01424250A1000C086BA /* Buildable.swift */; };
+		641CF01724250A4100C086BA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01624250A4100C086BA /* Actions.swift */; };
+		641CF01924250AA300C086BA /* Epics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01824250AA300C086BA /* Epics.swift */; };
+		641CF01B24250C1100C086BA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01A24250C1100C086BA /* Store.swift */; };
 		E30385862424554B004A5D35 /* CombineRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; };
 		E303858B2424554B004A5D35 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303858A2424554B004A5D35 /* ReducerTests.swift */; };
 		E303859724245570004A5D35 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859624245570004A5D35 /* Action.swift */; };
@@ -26,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		641CF00F242509A700C086BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E30385732424554A004A5D35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E303857B2424554A004A5D35;
+			remoteInfo = CombineRedux;
+		};
 		E30385872424554B004A5D35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E30385732424554A004A5D35 /* Project object */;
@@ -34,6 +52,20 @@
 			remoteInfo = CombineRedux;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		641CF011242509A700C086BA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				641CF00E242509A700C086BA /* CombineRedux.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		641CEFA92424E30800C086BA /* CombineWaiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWaiter.swift; sourceTree = "<group>"; };
@@ -44,6 +76,17 @@
 		641CEFB42424EEEE00C086BA /* AnyEpicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEpicTests.swift; sourceTree = "<group>"; };
 		641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Epic+asAnyEpic.swift"; sourceTree = "<group>"; };
 		641CEFB82424F8EC00C086BA /* EpicGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicGroup.swift; sourceTree = "<group>"; };
+		641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicGroupTests.swift; sourceTree = "<group>"; };
+		641CEFBC2424FB6900C086BA /* Array+epics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+epics.swift"; sourceTree = "<group>"; };
+		641CEFF62425086600C086BA /* Demos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		641CEFF82425086600C086BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		641CF0062425086800C086BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		641CF00A2425096400C086BA /* Reducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
+		641CF012242509FC00C086BA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		641CF01424250A1000C086BA /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
+		641CF01624250A4100C086BA /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		641CF01824250AA300C086BA /* Epics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epics.swift; sourceTree = "<group>"; };
+		641CF01A24250C1100C086BA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		E303857C2424554A004A5D35 /* CombineRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30385802424554A004A5D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E30385852424554B004A5D35 /* CombineReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +100,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		641CEFF32425086600C086BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				641CF00D242509A700C086BA /* CombineRedux.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E30385792424554A004A5D35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,12 +145,35 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		641CEFF72425086600C086BA /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				641CEFF82425086600C086BA /* AppDelegate.swift */,
+				641CF0062425086800C086BA /* Info.plist */,
+				641CF00A2425096400C086BA /* Reducers.swift */,
+				641CF012242509FC00C086BA /* AppState.swift */,
+				641CF01424250A1000C086BA /* Buildable.swift */,
+				641CF01624250A4100C086BA /* Actions.swift */,
+				641CF01824250AA300C086BA /* Epics.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		641CF00C242509A700C086BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E30385722424554A004A5D35 = {
 			isa = PBXGroup;
 			children = (
 				E303857E2424554A004A5D35 /* CombineRedux */,
 				E30385892424554B004A5D35 /* CombineReduxTests */,
+				641CEFF72425086600C086BA /* Demos */,
 				E303857D2424554A004A5D35 /* Products */,
+				641CF00C242509A700C086BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +182,7 @@
 			children = (
 				E303857C2424554A004A5D35 /* CombineRedux.framework */,
 				E30385852424554B004A5D35 /* CombineReduxTests.xctest */,
+				641CEFF62425086600C086BA /* Demos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +198,8 @@
 				641CEFB22424EDC000C086BA /* AnyEpic.swift */,
 				641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */,
 				641CEFB82424F8EC00C086BA /* EpicGroup.swift */,
+				641CEFBC2424FB6900C086BA /* Array+epics.swift */,
+				641CF01A24250C1100C086BA /* Store.swift */,
 			);
 			path = CombineRedux;
 			sourceTree = "<group>";
@@ -135,6 +212,7 @@
 				E303858A2424554B004A5D35 /* ReducerTests.swift */,
 				E3C6D25924245D3500AD04A1 /* EpicTests.swift */,
 				641CEFB42424EEEE00C086BA /* AnyEpicTests.swift */,
+				641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */,
 				E303858C2424554B004A5D35 /* Info.plist */,
 			);
 			path = CombineReduxTests;
@@ -153,6 +231,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		641CEFF52425086600C086BA /* Demos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 641CF0072425086800C086BA /* Build configuration list for PBXNativeTarget "Demos" */;
+			buildPhases = (
+				641CEFF22425086600C086BA /* Sources */,
+				641CEFF32425086600C086BA /* Frameworks */,
+				641CEFF42425086600C086BA /* Resources */,
+				641CF011242509A700C086BA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				641CF010242509A700C086BA /* PBXTargetDependency */,
+			);
+			name = Demos;
+			productName = Demos;
+			productReference = 641CEFF62425086600C086BA /* Demos.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E303857B2424554A004A5D35 /* CombineRedux */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E30385902424554B004A5D35 /* Build configuration list for PBXNativeTarget "CombineRedux" */;
@@ -204,6 +301,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Elias Paulino";
 				TargetAttributes = {
+					641CEFF52425086600C086BA = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					E303857B2424554A004A5D35 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -231,11 +331,19 @@
 			targets = (
 				E303857B2424554A004A5D35 /* CombineRedux */,
 				E30385842424554B004A5D35 /* CombineReduxTests */,
+				641CEFF52425086600C086BA /* Demos */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		641CEFF42425086600C086BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E303857A2424554A004A5D35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,12 +361,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		641CEFF22425086600C086BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				641CF01724250A4100C086BA /* Actions.swift in Sources */,
+				641CF013242509FC00C086BA /* AppState.swift in Sources */,
+				641CF00B2425096400C086BA /* Reducers.swift in Sources */,
+				641CF01524250A1000C086BA /* Buildable.swift in Sources */,
+				641CF01924250AA300C086BA /* Epics.swift in Sources */,
+				641CEFF92425086600C086BA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E30385782424554A004A5D35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E303859924245583004A5D35 /* StateGetter.swift in Sources */,
 				E303859724245570004A5D35 /* Action.swift in Sources */,
+				641CEFBD2424FB6900C086BA /* Array+epics.swift in Sources */,
+				641CF01B24250C1100C086BA /* Store.swift in Sources */,
 				E3C6D25824245CCE00AD04A1 /* Epic.swift in Sources */,
 				E303859B242455AC004A5D35 /* Reducer.swift in Sources */,
 				641CEFB72424F62E00C086BA /* Epic+asAnyEpic.swift in Sources */,
@@ -271,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641CEFBB2424F9B500C086BA /* EpicGroupTests.swift in Sources */,
 				641CEFB52424EEEE00C086BA /* AnyEpicTests.swift in Sources */,
 				641CEFAF2424ECED00C086BA /* ReducerMock.swift in Sources */,
 				E3C6D25A24245D3500AD04A1 /* EpicTests.swift in Sources */,
@@ -284,6 +408,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		641CF010242509A700C086BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E303857B2424554A004A5D35 /* CombineRedux */;
+			targetProxy = 641CF00F242509A700C086BA /* PBXContainerItemProxy */;
+		};
 		E30385882424554B004A5D35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E303857B2424554A004A5D35 /* CombineRedux */;
@@ -292,6 +421,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		641CF0082425086800C086BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Demos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = paulino.elias.Demos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		641CF0092425086800C086BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Demos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = paulino.elias.Demos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E303858E2424554B004A5D35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -504,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		641CF0072425086800C086BA /* Build configuration list for PBXNativeTarget "Demos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				641CF0082425086800C086BA /* Debug */,
+				641CF0092425086800C086BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E30385762424554A004A5D35 /* Build configuration list for PBXProject "CombineRedux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

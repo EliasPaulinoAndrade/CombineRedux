@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias StateGetter<StateType> = () -> StateType
+public typealias StateGetter<StateType> = () -> StateType
