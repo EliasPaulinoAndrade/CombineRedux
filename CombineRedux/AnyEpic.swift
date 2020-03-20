@@ -11,7 +11,7 @@ import Combine
 
 /// A type erasurer to the Epics. Use it to make a reference for a Epic.
 struct AnyEpic<StateType>: UntypedActionEpic {
-    private let recoveredActionFor: (AnyPublisher<Action, Never>,
+    let recoveredActionFor: (AnyPublisher<Action, Never>,
                                     @escaping StateGetter<StateType>,
                                     @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>]
     
