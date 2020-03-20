@@ -18,32 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let notesEpic = EpicGroup(
-            subEpics: [
-                PrinterMiddleware().asAnyEpic,
-                IncrementerMiddleware().asAnyEpic,
-                FetcherMiddleware().asAnyEpic
-            ],
-            keyPath: \AppState.notes
-        ).asAnyEpic
+        let notesEpic = [
+            PrinterEpic().asAnyEpic,
+            IncrementerEpic().asAnyEpic,
+            FetcherEpic().asAnyEpic
+        ].epicGroup(keyPath: \AppState.notes)
 
-        let userEpics = EpicGroup(epic: UserLoginMiddleware().asAnyEpic, keyPath: \AppState.loggedUser?).asAnyEpic
-            
-        let store = Store(state: AppState(), reducer: AppReducer(), epics: [
+        let store = Store(state: AppState(), reducer: AppReducer(), epics:
             notesEpic,
-            userEpics,
-        ])
+            UserLoginEpic().epicGroup(keyPath: \AppState.loggedUser)
+        )
 
         var cancellableStore: [AnyCancellable] = []
 
         store.sink { appState in
             print("#1 - ", appState)
         }.store(in: &cancellableStore)
-
-        store.sink { appState in
-            print("#2 - ", appState)
-        }.store(in: &cancellableStore)
-
+        
         store.mapIfChanged(keyPath: \.loggedUser).sink { user in
             print("#-------->UserChanged: ", user)
         }.store(in: &cancellableStore)

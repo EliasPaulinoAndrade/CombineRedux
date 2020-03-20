@@ -32,6 +32,10 @@ public class Store<StateType, ReducerType: UntypedActionReducer>: Publisher wher
         bindEpics()
     }
     
+    public convenience init(state: StateType, reducer: ReducerType, epics: EpicType...) {
+        self.init(state: state, reducer: reducer, epics: epics)
+    }
+    
     private func bindEpics() {
         epics.forEach { epic in
             epic.untypedActionsPublishersFor(

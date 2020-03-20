@@ -44,7 +44,7 @@ public extension Epic {
                                      appStateGetter: @escaping StateGetter<StateType>,
                                      oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>] {
         return actionsPublishersFor(
-            actionsPublisher: actionPublisher.compactMap { action -> ActionType? in
+            actionsPublisher: actionPublisher.print().compactMap { action -> ActionType? in
                 return action as? ActionType
             }.eraseToAnyPublisher(),
             appStateGetter: appStateGetter,

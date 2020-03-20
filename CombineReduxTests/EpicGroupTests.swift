@@ -25,13 +25,36 @@ class EpicGroupTests: XCTestCase {
                                                                appStateGetter: { return MockState() },
                                                                oldAppStateGetter: { return MockState() })
         
-        CombineWaiter.wait(publisher: actionPublishers.first!)
+        expect(actionPublishers.count).to(equal(2))
+        CombineWaiter.wait(publisher: actionPublishers[0])
+        CombineWaiter.wait(publisher: actionPublishers[1])
         
         inputSubject.send(TestAction.state1)
         
         expect(epic1.actionsWasCalled).toEventually(equal(true))
         expect(epic2.actionsWasCalled).toEventually(equal(true))
     }
+    
+    func test_outputIsSentByGroupedEpics_producesCorrectOutputIntoEpicsGroup() {
+        let epic1 = EpicMock<TestAction, MockSubState>(shouldReturn: .state1)
+        let epic2 = EpicMock<TestAction, MockSubState>(shouldReturn: .state2)
+        
+        let sut = EpicGroup(subEpics: epic1, epic2, keyPath: \MockState.subState)
+        let inputSubject = PassthroughSubject<Action, Never>()
+        let actionPublishers = sut.untypedActionsPublishersFor(actionPublisher: inputSubject.eraseToAnyPublisher(),
+                                                               appStateGetter: { return MockState() },
+                                                               oldAppStateGetter: { return MockState() })
+        let firstPublisherWaiter = CombineWaiter.wait(publisher: actionPublishers[0])
+        let secondPublisherWaiter = CombineWaiter.wait(publisher: actionPublishers[1])
+        
+        inputSubject.send(TestAction.state1)
+        
+        expect(firstPublisherWaiter.results.count).to(equal(1))
+        expect(secondPublisherWaiter.results.count).to(equal(1))
+        expect(firstPublisherWaiter.results[0] as? TestAction).to(equal(.state1))
+        expect(secondPublisherWaiter.results[0] as? TestAction).to(equal(.state2))
+    }
+    
 }
 
 struct MockSubState { }

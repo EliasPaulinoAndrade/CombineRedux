@@ -17,7 +17,7 @@
 		641CEFB72424F62E00C086BA /* Epic+asAnyEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */; };
 		641CEFB92424F8EC00C086BA /* EpicGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFB82424F8EC00C086BA /* EpicGroup.swift */; };
 		641CEFBB2424F9B500C086BA /* EpicGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */; };
-		641CEFBD2424FB6900C086BA /* Array+epics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFBC2424FB6900C086BA /* Array+epics.swift */; };
+		641CEFBD2424FB6900C086BA /* Array+epicGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFBC2424FB6900C086BA /* Array+epicGroup.swift */; };
 		641CEFF92425086600C086BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CEFF82425086600C086BA /* AppDelegate.swift */; };
 		641CF00B2425096400C086BA /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF00A2425096400C086BA /* Reducers.swift */; };
 		641CF00D242509A700C086BA /* CombineRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; };
@@ -27,6 +27,7 @@
 		641CF01724250A4100C086BA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01624250A4100C086BA /* Actions.swift */; };
 		641CF01924250AA300C086BA /* Epics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01824250AA300C086BA /* Epics.swift */; };
 		641CF01B24250C1100C086BA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01A24250C1100C086BA /* Store.swift */; };
+		641CF01D24250E7B00C086BA /* Epic+epicGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */; };
 		E30385862424554B004A5D35 /* CombineRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; };
 		E303858B2424554B004A5D35 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303858A2424554B004A5D35 /* ReducerTests.swift */; };
 		E303859724245570004A5D35 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859624245570004A5D35 /* Action.swift */; };
@@ -77,7 +78,7 @@
 		641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Epic+asAnyEpic.swift"; sourceTree = "<group>"; };
 		641CEFB82424F8EC00C086BA /* EpicGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicGroup.swift; sourceTree = "<group>"; };
 		641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicGroupTests.swift; sourceTree = "<group>"; };
-		641CEFBC2424FB6900C086BA /* Array+epics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+epics.swift"; sourceTree = "<group>"; };
+		641CEFBC2424FB6900C086BA /* Array+epicGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+epicGroup.swift"; sourceTree = "<group>"; };
 		641CEFF62425086600C086BA /* Demos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641CEFF82425086600C086BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		641CF0062425086800C086BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		641CF01624250A4100C086BA /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		641CF01824250AA300C086BA /* Epics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epics.swift; sourceTree = "<group>"; };
 		641CF01A24250C1100C086BA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Epic+epicGroup.swift"; sourceTree = "<group>"; };
 		E303857C2424554A004A5D35 /* CombineRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30385802424554A004A5D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E30385852424554B004A5D35 /* CombineReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +200,8 @@
 				641CEFB22424EDC000C086BA /* AnyEpic.swift */,
 				641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */,
 				641CEFB82424F8EC00C086BA /* EpicGroup.swift */,
-				641CEFBC2424FB6900C086BA /* Array+epics.swift */,
+				641CEFBC2424FB6900C086BA /* Array+epicGroup.swift */,
+				641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */,
 				641CF01A24250C1100C086BA /* Store.swift */,
 			);
 			path = CombineRedux;
@@ -380,11 +383,12 @@
 			files = (
 				E303859924245583004A5D35 /* StateGetter.swift in Sources */,
 				E303859724245570004A5D35 /* Action.swift in Sources */,
-				641CEFBD2424FB6900C086BA /* Array+epics.swift in Sources */,
+				641CEFBD2424FB6900C086BA /* Array+epicGroup.swift in Sources */,
 				641CF01B24250C1100C086BA /* Store.swift in Sources */,
 				E3C6D25824245CCE00AD04A1 /* Epic.swift in Sources */,
 				E303859B242455AC004A5D35 /* Reducer.swift in Sources */,
 				641CEFB72424F62E00C086BA /* Epic+asAnyEpic.swift in Sources */,
+				641CF01D24250E7B00C086BA /* Epic+epicGroup.swift in Sources */,
 				641CEFB92424F8EC00C086BA /* EpicGroup.swift in Sources */,
 				641CEFB32424EDC000C086BA /* AnyEpic.swift in Sources */,
 			);

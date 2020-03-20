@@ -10,7 +10,7 @@ import Foundation
 import CombineRedux
 import Combine
 
-struct UserLoginMiddleware: SimpleEpic {
+struct UserLoginEpic: SimpleEpic {
     typealias ActionType = UserActions
     typealias StateType = User?
     
@@ -23,7 +23,7 @@ struct UserLoginMiddleware: SimpleEpic {
     }
 }
 
-struct FetcherMiddleware: UntypedActionEpic {
+struct FetcherEpic: UntypedActionEpic {
     typealias StateType = Notes
     
     func untypedActionsPublishersFor(actionPublisher: AnyPublisher<Action, Never>,
@@ -48,7 +48,7 @@ struct FetcherMiddleware: UntypedActionEpic {
     }
 }
 
-struct IncrementerMiddleware: SimpleEpic {
+struct IncrementerEpic: SimpleEpic {
     typealias StateType = Notes
     typealias ActionType = NoteActions
     
@@ -67,7 +67,7 @@ struct IncrementerMiddleware: SimpleEpic {
     }
 }
 
-struct PrinterMiddleware: SimpleEpic {
+struct PrinterEpic: SimpleEpic {
     typealias StateType = Notes
     typealias ActionType = NoteActions
     
@@ -75,10 +75,10 @@ struct PrinterMiddleware: SimpleEpic {
                    appStateGetter: @escaping StateGetter<Notes>,
                    oldAppStateGetter: @escaping StateGetter<Notes>) -> AnyPublisher<NoteActions, Never> {
         actionsPublisher.flatMap { action -> AnyPublisher<NoteActions, Never> in
-            guard let notes = PrinterMiddleware.notesToPrint(fromAction: action) else {
+            guard let notes = PrinterEpic.notesToPrint(fromAction: action) else {
                 return Empty().eraseToAnyPublisher()
             }
-            print(PrinterMiddleware.stringToPrint(notes: notes, withTile: "Pretty Print"))
+            print(PrinterEpic.stringToPrint(notes: notes, withTile: "Pretty Print"))
             if !appStateGetter().wasIncremented {
                 return Just(.increment).eraseToAnyPublisher()
             }
