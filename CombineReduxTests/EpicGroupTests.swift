@@ -54,5 +54,4 @@ class EpicGroupTests: XCTestCase {
         expect(firstPublisherWaiter.results[0] as? TestAction).to(equal(.state1))
         expect(secondPublisherWaiter.results[0] as? TestAction).to(equal(.state2))
     }
-    
 }

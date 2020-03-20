@@ -11,7 +11,7 @@ import XCTest
 
 class ReducerTests: XCTestCase {
     func test_callTypedReducerWithActionOfOtherType_theTypedReducerMethodIsNotCalledAndReturnsNotChanged() {
-        let sut = ReducerMock()
+        let sut = ReducerMock<Int>()
         let newState = sut.reduce(state: 0, withAction: TestAction2())
         if case .notChanged = newState {
             XCTAssert(true)
@@ -19,17 +19,17 @@ class ReducerTests: XCTestCase {
             XCTFail()
         }
         
-        XCTAssertEqual(sut.reduceWasCalled, false)
+        XCTAssertEqual(sut.wasCalled, false)
     }
     
     func test_callTypedReducerWithActionOfSmaeTyoe_theTypedReducerMethodIsCalled() {
-        let sut = ReducerMock()
+        let sut = ReducerMock<Int>()
         let _ = sut.reduce(state: 0, withAction: TestAction())
-        XCTAssertEqual(sut.reduceWasCalled, true)
+        XCTAssertEqual(sut.wasCalled, true)
     }
     
     func test_typedReducerReturnChanged_theUnTypedMethodReturnsChanged() {
-        let sut = ReducerMock(shouldReturn: .changed(state: 1))
+        let sut = ReducerMock(shouldReturn: 1)
         let reducedState = sut.reduce(state: 0, withAction: TestAction())
         
         if case let .changed(newState) = reducedState, newState == 1 {
@@ -40,7 +40,7 @@ class ReducerTests: XCTestCase {
     }
     
     func test_typedReducerReturnNotChanged_theUnTypedMethodReturnsNotChanged() {
-        let sut = ReducerMock(shouldReturn: .notChanged)
+        let sut = ReducerMock<Int>()
         let reducedState = sut.reduce(state: 0, withAction: TestAction())
         
         if case .notChanged = reducedState {

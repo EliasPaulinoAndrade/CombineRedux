@@ -9,20 +9,22 @@
 import Foundation
 @testable import CombineRedux
 
-class ReducerMock: Reducer {
+class ReducerMock<StateType>: Reducer {
     typealias ActionType = TestAction
-    typealias StateType = Int
     
-    var reduceWasCalled: Bool = false
-    let shouldReturn: ReducedState<Int>
+    var wasCalled: Bool = false
+    var shouldReturn: StateType?
     
-    init(shouldReturn: ReducedState<Int> = .notChanged) {
+    init(shouldReturn: StateType? = nil) {
         self.shouldReturn = shouldReturn
     }
     
-    func reduce(state: Int, withTypedAction action: TestAction) -> ReducedState<Int> {
-        reduceWasCalled = true
+    func reduce(state: StateType, withTypedAction action: TestAction) -> ReducedState<StateType> {
+        self.wasCalled = true
         
-        return shouldReturn
+        if let shouldReturn = shouldReturn {
+            return .changed(state: shouldReturn)
+        }
+        return .notChanged
     }
 }

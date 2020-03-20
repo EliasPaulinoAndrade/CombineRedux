@@ -8,12 +8,21 @@
 
 import Foundation
 
-struct MockSubState { }
+struct MockSubState: Equatable {
+    let attributte: String
+}
 
-struct MockState {
+struct MockState: Equatable {
     let subState: MockSubState
+    let attributte: Int
     
     init() {
-        subState = .init()
+        subState = .init(attributte: "")
+        attributte = 0
+    }
+    
+    init(subState: MockSubState, attributte: Int) {
+        self.subState = subState
+        self.attributte = attributte
     }
 }
