@@ -17,35 +17,34 @@ import Combine
 protocol UntypedActionEpic {
     associatedtype StateType
     
-    func untypedActionsFor(newState state: AnyPublisher<Action, Never>,
-                   appStateGetter: @escaping StateGetter<StateType>,
-                   oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>]
+    func untypedActionsPublishersFor(actionPublisher: AnyPublisher<Action, Never>,
+                                     appStateGetter: @escaping StateGetter<StateType>,
+                                     oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>]
 }
 
 /// A Epic with associatedtype for the Action Type. Use it when your Epic depends on only one Action implmentation.
 protocol Epic: UntypedActionEpic {
     associatedtype ActionType: Action
     
-    func actionsFor(newState state: AnyPublisher<ActionType, Never>,
-                        appStateGetter: @escaping StateGetter<StateType>,
-                        oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<ActionType, Never>]
+    func actionsPublishersFor(actionsPublisher: AnyPublisher<ActionType, Never>,
+                              appStateGetter: @escaping StateGetter<StateType>,
+                              oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<ActionType, Never>]
 }
 
 /// A Epic thar abbreviates the Epic method assignature for returning only one Action Publisher. Use it when you need publish only one new action at the and of the epic processing.
 protocol SimpleEpic: Epic {
-    func actionFor(newState state: AnyPublisher<ActionType, Never>,
-                   appStateGetter: @escaping StateGetter<StateType>,
-                   oldAppStateGetter: @escaping StateGetter<StateType>) -> AnyPublisher<ActionType, Never>
+    func actionPublisherFor(actionsPublisher: AnyPublisher<ActionType, Never>,
+                            appStateGetter: @escaping StateGetter<StateType>,
+                            oldAppStateGetter: @escaping StateGetter<StateType>) -> AnyPublisher<ActionType, Never>
 }
 
 extension Epic {
     /// A default implementation for untypedActionsFor method. It delegates all the calls to this methods to the actionsFor method, for doing it, it is necessary make a casting from Action protocol usage to the associatedtype ActionType, so the actionsFor is only called when the casting is possible.
-    func untypedActionsFor(newState state: AnyPublisher<Action, Never>,
-                   appStateGetter: @escaping StateGetter<StateType>,
-                   oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>] {
-        
-        return actionsFor(
-            newState: state.compactMap { action -> ActionType? in
+    func untypedActionsPublishersFor(actionPublisher: AnyPublisher<Action, Never>,
+                                     appStateGetter: @escaping StateGetter<StateType>,
+                                     oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<Action, Never>] {
+        return actionsPublishersFor(
+            actionsPublisher: actionPublisher.compactMap { action -> ActionType? in
                 return action as? ActionType
             }.eraseToAnyPublisher(),
             appStateGetter: appStateGetter,
@@ -58,9 +57,9 @@ extension Epic {
 
 extension SimpleEpic {
     /// a default implementation to the actionsFor.
-    func actionsFor(newState state: AnyPublisher<ActionType, Never>,
-                        appStateGetter: @escaping StateGetter<StateType>,
-                        oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<ActionType, Never>] {
-        return [actionFor(newState: state, appStateGetter: appStateGetter, oldAppStateGetter: oldAppStateGetter)]
+    func actionsPublishersFor(actionsPublisher: AnyPublisher<ActionType, Never>,
+                              appStateGetter: @escaping StateGetter<StateType>,
+                              oldAppStateGetter: @escaping StateGetter<StateType>) -> [AnyPublisher<ActionType, Never>] {
+        return [actionPublisherFor(actionsPublisher: actionsPublisher, appStateGetter: appStateGetter, oldAppStateGetter: oldAppStateGetter)]
     }
 }
