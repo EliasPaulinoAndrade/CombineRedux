@@ -28,6 +28,7 @@
 		641CF01924250AA300C086BA /* Epics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01824250AA300C086BA /* Epics.swift */; };
 		641CF01B24250C1100C086BA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01A24250C1100C086BA /* Store.swift */; };
 		641CF01D24250E7B00C086BA /* Epic+epicGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */; };
+		641CF01F2425218600C086BA /* StatesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CF01E2425218500C086BA /* StatesMock.swift */; };
 		E30385862424554B004A5D35 /* CombineRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E303857C2424554A004A5D35 /* CombineRedux.framework */; };
 		E303858B2424554B004A5D35 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303858A2424554B004A5D35 /* ReducerTests.swift */; };
 		E303859724245570004A5D35 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859624245570004A5D35 /* Action.swift */; };
@@ -89,6 +90,7 @@
 		641CF01824250AA300C086BA /* Epics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epics.swift; sourceTree = "<group>"; };
 		641CF01A24250C1100C086BA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Epic+epicGroup.swift"; sourceTree = "<group>"; };
+		641CF01E2425218500C086BA /* StatesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesMock.swift; sourceTree = "<group>"; };
 		E303857C2424554A004A5D35 /* CombineRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30385802424554A004A5D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E30385852424554B004A5D35 /* CombineReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				641CEFAC2424ECC300C086BA /* EpicMock.swift */,
 				641CEFAE2424ECED00C086BA /* ReducerMock.swift */,
 				641CEFB02424ED0B00C086BA /* ActionsMock.swift */,
+				641CF01E2425218500C086BA /* StatesMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				641CEFAA2424E30800C086BA /* CombineWaiter.swift in Sources */,
 				E303858B2424554B004A5D35 /* ReducerTests.swift in Sources */,
 				641CEFB12424ED0B00C086BA /* ActionsMock.swift in Sources */,
+				641CF01F2425218600C086BA /* StatesMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

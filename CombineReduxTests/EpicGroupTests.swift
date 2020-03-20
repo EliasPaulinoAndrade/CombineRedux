@@ -56,13 +56,3 @@ class EpicGroupTests: XCTestCase {
     }
     
 }
-
-struct MockSubState { }
-
-struct MockState {
-    let subState: MockSubState
-    
-    init() {
-        self.subState = .init()
-    }
-}

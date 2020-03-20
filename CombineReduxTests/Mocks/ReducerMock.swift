@@ -21,7 +21,7 @@ class ReducerMock: Reducer {
     }
     
     func reduce(state: Int, withTypedAction action: TestAction) -> ReducedState<Int> {
-        self.reduceWasCalled = true
+        reduceWasCalled = true
         
         return shouldReturn
     }

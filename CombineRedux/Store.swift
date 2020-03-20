@@ -29,21 +29,41 @@ public class Store<StateType, ReducerType: UntypedActionReducer>: Publisher wher
         self.reducer = reducer
         self.epics = epics
         
-        bindEpics()
+        Store.bindEpics(epics: epics,
+                        actionsPublisher: actionSubject.eraseToAnyPublisher(),
+                        appStateGetter: getState, oldAppStateGetter: getOldState,
+                        dispatcher: dispatch,
+                        cancellableStore: &cancellableStore)
     }
     
     public convenience init(state: StateType, reducer: ReducerType, epics: EpicType...) {
         self.init(state: state, reducer: reducer, epics: epics)
     }
     
-    private func bindEpics() {
+    static func bindEpics(epics: [EpicType],
+                          actionsPublisher: AnyPublisher<Action, Never>,
+                          appStateGetter: @escaping StateGetter<StateType>,
+                          oldAppStateGetter: @escaping StateGetter<StateType>,
+                          dispatcher: @escaping (Action) -> Void,
+                          cancellableStore: inout [AnyCancellable]) {
         epics.forEach { epic in
             epic.untypedActionsPublishersFor(
-                actionPublisher: actionSubject.eraseToAnyPublisher(),
-                appStateGetter: { [unowned self] in return self.stateSubject.value },
-                oldAppStateGetter: { [unowned self] in return self.stateSubject.value }
-            ).forEach { $0.sink(receiveValue: dispatch).store(in: &cancellableStore) }
+                actionPublisher: actionsPublisher,
+                appStateGetter: appStateGetter,
+                oldAppStateGetter: oldAppStateGetter
+            ).forEach {
+                $0.sink(receiveValue: dispatcher)
+                  .store(in: &cancellableStore)
+            }
         }
+    }
+    
+    public func getState() -> StateType {
+        return self.stateSubject.value
+    }
+    
+    public func getOldState() -> StateType {
+        return self.oldStateSubject.value
     }
     
     public func dispatch(action: Action) {
@@ -60,7 +80,7 @@ public class Store<StateType, ReducerType: UntypedActionReducer>: Publisher wher
     }
     
     public func mapIfChanged<ValueType: Equatable>(keyPath: KeyPath<StateType, ValueType>) -> AnyPublisher<ValueType, Never> {
-        self.map(keyPath).filter { [unowned self] currentState -> Bool in
+        map(keyPath).filter { [unowned self] currentState -> Bool in
             currentState != self.oldStateSubject.value[keyPath: keyPath]
         }.eraseToAnyPublisher()
     }
