@@ -12,6 +12,7 @@
 		E303859724245570004A5D35 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859624245570004A5D35 /* Action.swift */; };
 		E303859924245583004A5D35 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859824245583004A5D35 /* StateGetter.swift */; };
 		E303859B242455AC004A5D35 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859A242455AC004A5D35 /* Reducer.swift */; };
+		E3C6D25824245CCE00AD04A1 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D25724245CCE00AD04A1 /* Epic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		E303859624245570004A5D35 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		E303859824245583004A5D35 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		E303859A242455AC004A5D35 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		E3C6D25724245CCE00AD04A1 /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				E303859624245570004A5D35 /* Action.swift */,
 				E303859824245583004A5D35 /* StateGetter.swift */,
 				E303859A242455AC004A5D35 /* Reducer.swift */,
+				E3C6D25724245CCE00AD04A1 /* Epic.swift */,
 			);
 			path = CombineRedux;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				E303859924245583004A5D35 /* StateGetter.swift in Sources */,
 				E303859724245570004A5D35 /* Action.swift in Sources */,
+				E3C6D25824245CCE00AD04A1 /* Epic.swift in Sources */,
 				E303859B242455AC004A5D35 /* Reducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
