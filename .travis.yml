@@ -1,8 +1,9 @@
 os: osx
 language: objective-c
 osx_image: xcode11
+xcode_destination: platform=iOS Simulator,name=iPhone 8,OS=13.0
 before_install:
     - rvm use system
     - sudo gem install cocoapods -v '1.7.4'  
 script:
-  - xcodebuild -workspace CombineRedux.xcodeproj -scheme CombineRedux -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - xcodebuild -project CombineRedux.xcodeproj -scheme CombineRedux -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.0' test | xcpretty 
