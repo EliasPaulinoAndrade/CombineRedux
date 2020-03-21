@@ -197,17 +197,13 @@
 		E303857E2424554A004A5D35 /* CombineRedux */ = {
 			isa = PBXGroup;
 			children = (
-				E30385802424554A004A5D35 /* Info.plist */,
+				E3C6D25E24259F5400AD04A1 /* Epics */,
+				E3C6D25D24259F4300AD04A1 /* Extensions */,
 				E303859624245570004A5D35 /* Action.swift */,
 				E303859824245583004A5D35 /* StateGetter.swift */,
 				E303859A242455AC004A5D35 /* Reducer.swift */,
-				E3C6D25724245CCE00AD04A1 /* Epic.swift */,
-				641CEFB22424EDC000C086BA /* AnyEpic.swift */,
-				641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */,
-				641CEFB82424F8EC00C086BA /* EpicGroup.swift */,
-				641CEFBC2424FB6900C086BA /* Array+epicGroup.swift */,
-				641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */,
 				641CF01A24250C1100C086BA /* Store.swift */,
+				E30385802424554A004A5D35 /* Info.plist */,
 			);
 			path = CombineRedux;
 			sourceTree = "<group>";
@@ -215,16 +211,52 @@
 		E30385892424554B004A5D35 /* CombineReduxTests */ = {
 			isa = PBXGroup;
 			children = (
+				E3C6D25B24259F1A00AD04A1 /* Tests */,
 				641CEFAB2424ECB800C086BA /* Mocks */,
 				641CEFA82424E2FF00C086BA /* Utils */,
-				E303858A2424554B004A5D35 /* ReducerTests.swift */,
-				E3C6D25924245D3500AD04A1 /* EpicTests.swift */,
-				641CEFB42424EEEE00C086BA /* AnyEpicTests.swift */,
-				641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */,
-				641CF02024254FD700C086BA /* StoreTests.swift */,
 				E303858C2424554B004A5D35 /* Info.plist */,
 			);
 			path = CombineReduxTests;
+			sourceTree = "<group>";
+		};
+		E3C6D25B24259F1A00AD04A1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6D25C24259F2100AD04A1 /* Epic */,
+				E303858A2424554B004A5D35 /* ReducerTests.swift */,
+				641CF02024254FD700C086BA /* StoreTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E3C6D25C24259F2100AD04A1 /* Epic */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6D25924245D3500AD04A1 /* EpicTests.swift */,
+				641CEFB42424EEEE00C086BA /* AnyEpicTests.swift */,
+				641CEFBA2424F9B500C086BA /* EpicGroupTests.swift */,
+			);
+			path = Epic;
+			sourceTree = "<group>";
+		};
+		E3C6D25D24259F4300AD04A1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				641CEFB62424F62E00C086BA /* Epic+asAnyEpic.swift */,
+				641CEFBC2424FB6900C086BA /* Array+epicGroup.swift */,
+				641CF01C24250E7B00C086BA /* Epic+epicGroup.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3C6D25E24259F5400AD04A1 /* Epics */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6D25724245CCE00AD04A1 /* Epic.swift */,
+				641CEFB22424EDC000C086BA /* AnyEpic.swift */,
+				641CEFB82424F8EC00C086BA /* EpicGroup.swift */,
+			);
+			path = Epics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
