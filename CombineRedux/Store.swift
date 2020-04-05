@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-public class Store<StateType, ReducerType: UntypedActionReducer>: Publisher where ReducerType.StateType == StateType {
+open class Store<StateType, ReducerType: UntypedActionReducer>: Publisher where ReducerType.StateType == StateType {
     public typealias Output = StateType
     public typealias Failure = Never
     public typealias EpicType = AnyEpic<StateType>
@@ -81,7 +81,7 @@ public class Store<StateType, ReducerType: UntypedActionReducer>: Publisher wher
     
     public func mapIfChanged<ValueType: Equatable>(keyPath: KeyPath<StateType, ValueType>) -> AnyPublisher<ValueType, Never> {
         map(keyPath).filter { [unowned self] currentState -> Bool in
-            currentState != self.oldStateSubject.value[keyPath: keyPath]
+            return currentState != self.oldStateSubject.value[keyPath: keyPath]
         }.eraseToAnyPublisher()
     }
 }

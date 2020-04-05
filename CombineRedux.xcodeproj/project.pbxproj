@@ -35,6 +35,20 @@
 		E303859724245570004A5D35 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859624245570004A5D35 /* Action.swift */; };
 		E303859924245583004A5D35 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859824245583004A5D35 /* StateGetter.swift */; };
 		E303859B242455AC004A5D35 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E303859A242455AC004A5D35 /* Reducer.swift */; };
+		E31B81B924395CD9008DB2E1 /* GHState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81B824395CD9008DB2E1 /* GHState.swift */; };
+		E31B81BC24395D32008DB2E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81BB24395D32008DB2E1 /* Location.swift */; };
+		E31B81BF24395DF6008DB2E1 /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81BE24395DF6008DB2E1 /* Films.swift */; };
+		E31B81C124395F32008DB2E1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81C024395F32008DB2E1 /* People.swift */; };
+		E31B81C42439607B008DB2E1 /* PeopleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81C32439607B008DB2E1 /* PeopleAction.swift */; };
+		E31B81CA2439610D008DB2E1 /* PeoplesFetcherEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81C92439610D008DB2E1 /* PeoplesFetcherEpic.swift */; };
+		E31B81CD24396330008DB2E1 /* PeoplesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81CC24396330008DB2E1 /* PeoplesViewModel.swift */; };
+		E31B81D12439658A008DB2E1 /* PeoplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81D02439658A008DB2E1 /* PeoplesView.swift */; };
+		E31B81D4243972E5008DB2E1 /* GHStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81D3243972E5008DB2E1 /* GHStore.swift */; };
+		E31B81D624397340008DB2E1 /* PeopleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81D524397340008DB2E1 /* PeopleReducer.swift */; };
+		E31B81D824397950008DB2E1 /* PeopleViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81D724397950008DB2E1 /* PeopleViewFactory.swift */; };
+		E31B81DB24397F08008DB2E1 /* PeopleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81DA24397F08008DB2E1 /* PeopleState.swift */; };
+		E31B81DD24398000008DB2E1 /* GHReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81DC24398000008DB2E1 /* GHReducer.swift */; };
+		E31B81E0243982F6008DB2E1 /* PeopleFetcherEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B81DF243982F6008DB2E1 /* PeopleFetcherEpic.swift */; };
 		E3C6D25824245CCE00AD04A1 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D25724245CCE00AD04A1 /* Epic.swift */; };
 		E3C6D25A24245D3500AD04A1 /* EpicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D25924245D3500AD04A1 /* EpicTests.swift */; };
 		E3C6D260242633A300AD04A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C6D25F242633A300AD04A1 /* Images.xcassets */; };
@@ -102,6 +116,20 @@
 		E303859624245570004A5D35 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		E303859824245583004A5D35 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		E303859A242455AC004A5D35 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		E31B81B824395CD9008DB2E1 /* GHState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHState.swift; sourceTree = "<group>"; };
+		E31B81BB24395D32008DB2E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E31B81BE24395DF6008DB2E1 /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
+		E31B81C024395F32008DB2E1 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		E31B81C32439607B008DB2E1 /* PeopleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAction.swift; sourceTree = "<group>"; };
+		E31B81C92439610D008DB2E1 /* PeoplesFetcherEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplesFetcherEpic.swift; sourceTree = "<group>"; };
+		E31B81CC24396330008DB2E1 /* PeoplesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplesViewModel.swift; sourceTree = "<group>"; };
+		E31B81D02439658A008DB2E1 /* PeoplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplesView.swift; sourceTree = "<group>"; };
+		E31B81D3243972E5008DB2E1 /* GHStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHStore.swift; sourceTree = "<group>"; };
+		E31B81D524397340008DB2E1 /* PeopleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleReducer.swift; sourceTree = "<group>"; };
+		E31B81D724397950008DB2E1 /* PeopleViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewFactory.swift; sourceTree = "<group>"; };
+		E31B81DA24397F08008DB2E1 /* PeopleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleState.swift; sourceTree = "<group>"; };
+		E31B81DC24398000008DB2E1 /* GHReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReducer.swift; sourceTree = "<group>"; };
+		E31B81DF243982F6008DB2E1 /* PeopleFetcherEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFetcherEpic.swift; sourceTree = "<group>"; };
 		E3C6D25724245CCE00AD04A1 /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
 		E3C6D25924245D3500AD04A1 /* EpicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicTests.swift; sourceTree = "<group>"; };
 		E3C6D25F242633A300AD04A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -157,6 +185,7 @@
 		641CEFF72425086600C086BA /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E31B81B724395B7F008DB2E1 /* Ghibli */,
 				641CEFF82425086600C086BA /* AppDelegate.swift */,
 				641CF0062425086800C086BA /* Info.plist */,
 				641CF00A2425096400C086BA /* Reducers.swift */,
@@ -220,6 +249,83 @@
 				E303858C2424554B004A5D35 /* Info.plist */,
 			);
 			path = CombineReduxTests;
+			sourceTree = "<group>";
+		};
+		E31B81B724395B7F008DB2E1 /* Ghibli */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81BA24395D26008DB2E1 /* Models */,
+				E31B81D2243972AB008DB2E1 /* Redux */,
+				E31B81C6243960BE008DB2E1 /* Scenes */,
+			);
+			path = Ghibli;
+			sourceTree = "<group>";
+		};
+		E31B81BA24395D26008DB2E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81BB24395D32008DB2E1 /* Location.swift */,
+				E31B81BE24395DF6008DB2E1 /* Films.swift */,
+				E31B81C024395F32008DB2E1 /* People.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E31B81C6243960BE008DB2E1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81D924397B22008DB2E1 /* People */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E31B81C7243960CA008DB2E1 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81DE243982D8008DB2E1 /* Epics */,
+				E31B81C32439607B008DB2E1 /* PeopleAction.swift */,
+				E31B81DA24397F08008DB2E1 /* PeopleState.swift */,
+				E31B81D524397340008DB2E1 /* PeopleReducer.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		E31B81C8243960D1008DB2E1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81CC24396330008DB2E1 /* PeoplesViewModel.swift */,
+				E31B81D02439658A008DB2E1 /* PeoplesView.swift */,
+				E31B81D724397950008DB2E1 /* PeopleViewFactory.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E31B81D2243972AB008DB2E1 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81B824395CD9008DB2E1 /* GHState.swift */,
+				E31B81D3243972E5008DB2E1 /* GHStore.swift */,
+				E31B81DC24398000008DB2E1 /* GHReducer.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		E31B81D924397B22008DB2E1 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81C7243960CA008DB2E1 /* Redux */,
+				E31B81C8243960D1008DB2E1 /* Presentation */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		E31B81DE243982D8008DB2E1 /* Epics */ = {
+			isa = PBXGroup;
+			children = (
+				E31B81C92439610D008DB2E1 /* PeoplesFetcherEpic.swift */,
+				E31B81DF243982F6008DB2E1 /* PeopleFetcherEpic.swift */,
+			);
+			path = Epics;
 			sourceTree = "<group>";
 		};
 		E3C6D25B24259F1A00AD04A1 /* Tests */ = {
@@ -411,10 +517,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				641CF01724250A4100C086BA /* Actions.swift in Sources */,
+				E31B81D824397950008DB2E1 /* PeopleViewFactory.swift in Sources */,
+				E31B81CA2439610D008DB2E1 /* PeoplesFetcherEpic.swift in Sources */,
+				E31B81B924395CD9008DB2E1 /* GHState.swift in Sources */,
+				E31B81D624397340008DB2E1 /* PeopleReducer.swift in Sources */,
+				E31B81BC24395D32008DB2E1 /* Location.swift in Sources */,
 				641CF013242509FC00C086BA /* AppState.swift in Sources */,
+				E31B81C124395F32008DB2E1 /* People.swift in Sources */,
+				E31B81DB24397F08008DB2E1 /* PeopleState.swift in Sources */,
+				E31B81BF24395DF6008DB2E1 /* Films.swift in Sources */,
+				E31B81C42439607B008DB2E1 /* PeopleAction.swift in Sources */,
+				E31B81DD24398000008DB2E1 /* GHReducer.swift in Sources */,
 				641CF00B2425096400C086BA /* Reducers.swift in Sources */,
+				E31B81D12439658A008DB2E1 /* PeoplesView.swift in Sources */,
+				E31B81CD24396330008DB2E1 /* PeoplesViewModel.swift in Sources */,
 				641CF01524250A1000C086BA /* Buildable.swift in Sources */,
 				641CF01924250AA300C086BA /* Epics.swift in Sources */,
+				E31B81D4243972E5008DB2E1 /* GHStore.swift in Sources */,
+				E31B81E0243982F6008DB2E1 /* PeopleFetcherEpic.swift in Sources */,
 				641CEFF92425086600C086BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
